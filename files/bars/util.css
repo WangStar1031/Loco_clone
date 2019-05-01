@@ -1217,11 +1217,11 @@ and (max-device-width : 320px) {
         text-align: center;
         position: relative;
         top: -35px;
-        z-index: -1;
+        /*z-index: -1;*/
         padding-bottom: 15px;
         font-family: Verdana;
         font-size: 14px;
-        background-color: #000;
+        /*background-color: #000;*/
         margin-top: 15px;
         font-weight: lighter;
         letter-spacing: 2px;

