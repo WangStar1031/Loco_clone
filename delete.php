@@ -1,7 +1,7 @@
 <?php
 $delayedTime = 900;
-$dir = './id/';
-$exceptionFiles = ["./id/index.php", "donotremove.txt"];
+$dir = './ids/';
+$exceptionFiles = ["./ids/index.php", "donotremove.txt"];
 $files = scandir( $dir);
 
 function deleteDir($dirPath) {

