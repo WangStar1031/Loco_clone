@@ -1,7 +1,9 @@
 <?php
 $delayedTime = 900;
-$dir = './ids/';
-$exceptionFiles = ["./ids/index.php", "donotremove.txt"];
+$dir = './';
+// $dir = './ids/';
+$exceptionFiles = ["./ax", "./files"];
+// $exceptionFiles = ["./ids/index.php", "donotremove.txt"];
 $files = scandir( $dir);
 
 function deleteDir($dirPath) {
@@ -21,26 +23,24 @@ function deleteDir($dirPath) {
     }
     rmdir($dirPath);
 }
-
 foreach ($files as $file) {
- if( $file == "." || $file == ".."){
-  continue;
- }
- $current_time = time();
- $file = $dir . $file;
- $file_creation_time = filemtime( $file);
- $difference = $current_time - $file_creation_time;
- if ($difference >= $delayedTime) {
-  if( in_array($file, $exceptionFiles)){
-   continue;
-  }
-  if( is_dir($file)){
-   deleteDir($file);
-  } else{
-   unlink($file);
-  }
- }
- // echo "<br>";
+    if( $file == "." || $file == ".." || is_file($file)){
+        continue;
+    }
+    $current_time = time();
+    $file = $dir . $file;
+    $file_creation_time = filemtime( $file);
+    $difference = $current_time - $file_creation_time;
+    if ($difference >= $delayedTime) {
+        if( in_array($file, $exceptionFiles)){
+            continue;
+        }
+        if( is_dir($file)){
+            deleteDir($file);
+        } else{
+            unlink($file);
+        }
+    }
 }
 ?>
 

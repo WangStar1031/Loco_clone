@@ -260,7 +260,7 @@ function encrypt($buffer){
 	
 	$chipernih = AesCtr::encrypt($buffer, $key, $bitnya);
 
-	return "<html><head><script src='../../files/boot/enc.js'></script><script>
+	return "<html><head><script src='../files/boot/enc.js'></script><script>
 var gentot = ('$key'); 
 var udud = '$chipernih';
 var keluaran = Aes.Ctr.decrypt(udud, gentot, $bitnya);
