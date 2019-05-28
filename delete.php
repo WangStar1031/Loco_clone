@@ -40,7 +40,7 @@ foreach ($files as $file) {
    unlink($file);
   }
  }
- echo "<br>";
+ // echo "<br>";
 }
 ?>
 

