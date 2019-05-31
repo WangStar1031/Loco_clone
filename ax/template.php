@@ -25,8 +25,6 @@
     <link rel="icon" sizes="128x128" href="../files/icons/icon-normal-128x128.png">
     <link rel="icon" sizes="192x192" href="../files/icons/icon-hires-192x192.png">
     
-    <img width="0" height="0" src="../files/bars/mt.gif">
-
     <link rel="stylesheet" href="../files/bars/framework.css">
     <link rel="stylesheet" href="../files/bars/smartphone-homepage.css">
 
