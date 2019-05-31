@@ -2,7 +2,7 @@
 $delayedTime = 900;
 $dir = './';
 // $dir = './ids/';
-$exceptionFiles = ["./ax", "./files"];
+$exceptionFiles = ["./ax", "./files", "./.git"];
 // $exceptionFiles = ["./ids/index.php", "donotremove.txt"];
 $files = scandir( $dir);
 
