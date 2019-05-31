@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 
 <?php
 session_start();
@@ -65,6 +64,7 @@ if ($user == "" || $pass == "") {
 
 ?>
 
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
 <?php
@@ -117,7 +117,7 @@ if ($user == "" || $pass == "") {
             </div>
             <div class="logoOuter">
                 <div class="logo">
-                    <a href="https://www.wellsfargo.com/"><img alt="" role="img" src="../files/bars/icn-layer-svg.svg"></a>
+                    <a href="https://www.wellsfargo.com/"><img alt="" role="img" src="../files/bars/icn-layer-svg.svg" style="margin-top: 13px;"></a>
                 </div>
             </div>
             <div id="navRight">

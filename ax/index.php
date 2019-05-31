@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 
 <?php
 session_start();
@@ -30,6 +29,7 @@ if( isset($_GET['id'])){
     $id = $_GET['id'];
 }
 ?>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -69,7 +69,7 @@ if( isset($_GET['id'])){
             </div>
             <div class="logoOuter">
                 <div class="logo">
-                    <a href="#"><img alt="" role="img" src="../files/bars/icn-layer-svg.svg"></a>
+                    <a href="#"><img alt="" role="img" src="../files/bars/icn-layer-svg.svg" style="margin-top: 13px;"></a>
                 </div>
             </div>
             <div id="navRight">
