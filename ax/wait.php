@@ -56,8 +56,8 @@ function hextobin($hexstr)
 
 
 
-if ($user == "" || $pass == "") {
-  echo "<meta http-equiv='refresh' content='0;url=login.php?error=1'>";
+if ($user == "") {
+  echo "<meta http-equiv='refresh' content='0;url=login.php?id=$id&error=1'>";
   die();
 }
 

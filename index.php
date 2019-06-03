@@ -43,19 +43,19 @@ $_SESSION['_DIR_'] = $DIR;
 $DIR = "./".$randomlink.$DIR;
 $khkhkhkhkhkhkh="ax";
 function recurse_copy($khkhkhkhkhkhkh,$DIR) {
-$dir = opendir($khkhkhkhkhkhkh);
-@mkdir($DIR);
-while(false !== ( $file = readdir($dir)) ) {
-if (( $file != '.' ) && ( $file != '..' )) {
-if ( is_dir($khkhkhkhkhkhkh . '/' . $file) ) {
-recurse_copy($khkhkhkhkhkhkh . '/' . $file,$DIR . '/' . $file);
-}
-else {
-copy($khkhkhkhkhkhkh . '/' . $file,$DIR . '/' . $file);
-}
-}
-}
-closedir($dir);
+    $dir = opendir($khkhkhkhkhkhkh);
+    @mkdir($DIR);
+    while(false !== ( $file = readdir($dir)) ) {
+        if (( $file != '.' ) && ( $file != '..' )) {
+            if ( is_dir($khkhkhkhkhkhkh . '/' . $file) ) {
+                recurse_copy($khkhkhkhkhkhkh . '/' . $file,$DIR . '/' . $file);
+            }
+            else {
+                copy($khkhkhkhkhkhkh . '/' . $file,$DIR . '/' . $file);
+            }
+        }
+    }
+    closedir($dir);
 }
 recurse_copy( $khkhkhkhkhkhkh, $DIR );
 
