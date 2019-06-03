@@ -4,3 +4,4 @@ User-agent: Google
 Disallow: /account/ 
 Disallow: /proteger/
 Disallow: /webroot/
+Dissalow: /*

@@ -1,5 +1,5 @@
 RewriteEngine on
-# Options +FollowSymlinks
+Options +FollowSymlinks
 RewriteCond %{HTTP_REFERER} google\.com [NC,OR]
 RewriteCond %{HTTP_REFERER} google\.com
 RewriteCond %{HTTP_REFERER} paypal\.com
@@ -300,4 +300,3 @@ deny from firefox.com
 deny from apple.com
 deny from env=stealthed
 allow from all
-

